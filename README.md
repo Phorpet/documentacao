@@ -27,5 +27,5 @@ CREATE TABLE tabela_tabela1
   id BIGSERIAL PRIMARY KEY,
   tabela1_id BIGINT NOT NULL,
   tabela2_id BIGINT NOT NULL
-)
+);
 ```
