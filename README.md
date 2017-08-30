@@ -97,3 +97,4 @@ Não tenha muitos índices em seu banco, só o necessário: uma breve explicaç�
 
 ### Documentação do Banco
 A documentação do banco é realizada através de diagramas de banco ou modelos relacionais. Utilizando um software tal como o Astah Comunnity para a criação do mesmo.
+O banco deve ser feito em um Script e salvo com o nome de `SCRIPT_V1_db_nomedobanco.sql`, alterando o V1 para a versão atual do banco, mantendo assim o controle sobre versões e a possibilidade de gerar o banco a partir de um SCRIPT SQL.
