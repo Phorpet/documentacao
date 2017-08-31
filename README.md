@@ -46,9 +46,26 @@ SELECT salario FROM funcionarios;
 
 ### Imagens
 Não armazene imagens no banco, sempre armazene as URLs.
+```sql
+
+CREATE TABLE imagem
+(
+  id BIGSERIAL PRIMARY KEY,
+  caminho VARCHAR(100),
+  nome VARCHAR(50)
+);
+
+```
 
 ### Chaves Primárias
 Utilize somente chaves primárias numéricas e de preferência do tipo BIGSERIAL (BIGINT com AUTO INCREMENT NOT NULL UNIQUE).
+```sql
+
+id BIGSERIAL PRIMARY KEY
+-- Ou
+id BIGINT NOT NULL UNIQUE PRIMARY KEY
+
+```
 
 ### Stored Procedures & Functions
 Utilizando-se stored procedures e functions ao invéz de escrever código no seu programa, vai garantir maior desempenho e segurança para seu sistema como um todo.
