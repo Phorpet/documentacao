@@ -72,6 +72,24 @@ Utilizando-se stored procedures e functions ao invéz de escrever código no seu
 
 ### Commits, Rollbacks & Transações
 Utilize o conceito de transações. Vários problemas podem ocorer, por exemplo, a rede cair. Aprenda sobre commit e rollback.
+```php
+/ / Exemplo commit-autocommit que usa uma tabela InnoDB
+$mysqli=new mysqli('host','user','password','database');
+if(mysqli_connect_errno()){
+trigger_error('Error connecting to host. '.$mysqli-
+&gt;error,E_USER_ERROR);
+}
+// turn off AUTOCOMMIT, then run some queries
+$mysqli-&gt;autocommit(FALSE);
+$mysqli-&gt;query("INSERT INTO customers (id,name,email) VALUES
+(NULL,'customer1','email1@domain.com')");
+$mysqli-&gt;query("INSERT INTO customers (id,name,email) VALUES
+(NULL,'customer2','email2@domain.com')");
+// commit transaction
+$mysqli-&gt;commit();
+// close connection
+$mysqli-&gt;close();
+```
 
 ### Tipos de dados
 Use sempre o tipo de dados correto para armazenar os dados. Por exemplo, não armazene sexo, que vai ser M ou F em um campo Varchar, use apenas 1 caractere: CHAR(1).
