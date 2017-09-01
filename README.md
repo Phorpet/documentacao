@@ -31,8 +31,6 @@ CREATE TABLE tabela_tabela1
 );
 ```
   
-O script SQL deve ser posto em um arquivo com o nome `SQL_db_nomedobanco.sql` a fim de facilitar a criação do banco do projeto.  
-  
 ### Instrução SELECT
 Em instruções select, evite usar “*”. Seja restritivo, traga somente os campos realmente necessários, isso alivia a memória do servidor, diminue tráfego na rede, etc. Algumas pessoas defendem que tambem não devem ser criados determinados campos, por exemplo, você tem A + B e pretende guardar C onde C = A + B. Ao invéz de criar uma coluna para armazenar C, passe a utilizar `SELECT (A+B) AS C FROM tabela`. Esse pensamento pode não ser necessariamente válido para Dws. Vamos supor que você tem uma tabela enorme com dados sobre salário por ano. Você pode armazenar o percentual de ajuste e o valor ajustado, fazendo ai uma “desnormalização” para que o comando que vai recuperar os valores do salário não “frite” a CPU forçando-a a fazer muitas contas e perdendo muito desempenho.  
   
